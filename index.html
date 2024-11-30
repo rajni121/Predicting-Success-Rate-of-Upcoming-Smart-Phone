@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Minor Background.jpeg') no-repeat center center fixed;
+            /* Replace with local image if needed */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            overflow-y: auto;
+            /* Ensure scrolling if needed */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            /* Slightly reduced padding */
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            /* Reduced width for better fit */
+            width: 100%;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 22px;
+            /* Slightly reduced font size */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 8px;
+            /* Reduced padding */
+            margin: 10px 0;
+            /* Adjusted margin */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            /* Slightly reduced font size */
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+            /* Ensure all labels are visible */
+            margin-bottom: 5px;
+            /* Added margin for clear spacing */
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+            /* Make the submit button prominent */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            /* Proper margin for radio buttons */
+        }
+
+        .radio-group label {
+            font-size: 14px;
+            /* Ensure proper visibility */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Predict Mobile Phone Review Score</h1>
+        <form action="/predict" method="post">
+            <label for="Price">Price (in ₹)</label>
+            <input type="text" name="Price" id="Price" required>
+
+            <label for="RAM">RAM (in GB)</label>
+            <input type="text" name="RAM" id="RAM" required>
+
+            <label for="ROM">ROM (in GB)</label>
+            <input type="text" name="ROM" id="ROM" required>
+
+            <label for="Height">Height (cm)</label>
+            <input type="text" name="Height" id="Height" required>
+
+            <label for="Width">Width (cm)</label>
+            <input type="text" name="Width" id="Width" required>
+
+            <label for="Main_Cam">Main Camera (MP)</label>
+            <input type="text" name="Main_Cam" id="Main_Cam" required>
+
+            <label for="Extra_Cam">Extra Camera (MP)</label>
+            <input type="text" name="Extra_Cam" id="Extra_Cam" required>
+
+            <label for="Front_Cam">Front Camera (MP)</label>
+            <input type="text" name="Front_Cam" id="Front_Cam" required>
+
+            <label for="Battery">Battery (mAh)</label>
+            <input type="text" name="Battery" id="Battery" required>
+
+            <label>Color (Black or White)</label>
+            <div class="radio-group">
+                <label><input type="radio" name="Color_Black" value="1" required> Black</label>
+                <label><input type="radio" name="Color_Black" value="0"> Not Black</label>
+            </div>
+            <div class="radio-group">
+                <label><input type="radio" name="Color_White" value="1" required> White</label>
+                <label><input type="radio" name="Color_White" value="0"> Not White</label>
+            </div>
+
+            <label for="Processor">Choose Processor</label>
+            <select name="Processor_MediaTek" id="Processor" required>
+                <option value="">Select a processor</option>
+                <option value="1">MediaTek</option>
+                <option value="0">Qualcomm</option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+
+</html>
