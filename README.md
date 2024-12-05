@@ -29,8 +29,6 @@ The dataset includes features such as:
 - **Review Scores** (Target Variable)  
 
 
-```
-
 ## **Key Files**  
 - **app.py**: The main Flask application file.  
 - **random_forest_model.pkl**: The saved Random Forest model.  
